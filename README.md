@@ -1,6 +1,3 @@
-![CI](https://github.com/hanwckf/rt-n56u/workflows/CI/badge.svg)
-![GitHub All Releases](https://img.shields.io/github/downloads/hanwckf/rt-n56u/total)
-[![release](https://img.shields.io/github/release/hanwckf/rt-n56u.svg)](https://github.com/hanwckf/rt-n56u/releases)
 
 # README #
 
@@ -26,6 +23,7 @@ Contributors of this project are not responsible for what happens next.
 ### 特别说明 ###
 * 汉化字典来自：https://github.com/gorden5566/padavan
 * 更新日志：https://www.jianshu.com/p/d76a63a12eae
+* 基于hanwckf的Padavan仓库制作
 
 ***
 
@@ -66,51 +64,13 @@ Contributors of this project are not responsible for what happens next.
 >- [smartdns](https://github.com/pymumu/smartdns) ```CONFIG_FIRMWARE_INCLUDE_SMARTDNS```
 
 - 已适配除官方适配外的以下机型
->- PSG1208
->- PSG1218
->- 5K-W20 (USB)
->- OYE-001 (USB)
->- NEWIFI-MINI (USB)
 >- MI-MINI (USB)
->- MI-3 (USB)
->- MI-3C
->- MI-4
->- MI-R3G (USB)
 >- MI-R4A
->- MI-R3P (USB)
->- HC5661A
->- HC5761A (USB)
->- HC5861B
->- 360P2 (USB)
 >- MI-NANO
->- MZ-R13
->- MZ-R13P
->- RT-AC1200GU (USB)
->- XY-C1 (USB)
->- WR1200JS (USB)
->- NEWIFI3 (USB)
->- B70 (USB)
->- A3004NS (USB)
 >- K2P
 >- K2P-USB (USB)
->- JCG-836PRO (USB)
->- JCG-AC860M (USB)
->- DIR-882 (USB)
->- DIR-878
->- MR2600 (USB)
->- WDR7300
->- RM2100
->- CR660x (CR6606, CR6608, CR6609)
->- R2100
->- JCG-Y2 (USB)
->- E8820V2 (USB)
->- ZTE_E8820S (USB)
->- MSG1500 (USB)
->- R6220 (USB)
->- NETGEAR-CHJ (R6260, R6350, R6850, WAC124)
->- NETGEAR-BZV (R6800, R6700-v2, R7200, Nighthawk AC2400)
 
-***
+*** 
 
 ### 编译说明 ###
 
@@ -162,8 +122,9 @@ sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
 * 克隆源码
 
 ```shell
-git clone --depth=1 https://e.coding.net/hanwckf/rt-n56u/padavan.git /opt/rt-n56u
-#git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u
+git clone --depth=1 https://github.com/lxnchan/rt-n56u.git /opt/rt-n56u
+git clone --depth=1 git@github.com:LxnChan/Padavan.git /opt/rt-n56u
+git clone --depth=1 git@bitbucket.org:lxnchan/main.git /opt/rt-n56u
 ```
 
 * 准备工具链
@@ -183,7 +144,7 @@ sh dl_toolchain.sh
 * (可选) 修改机型配置文件
 
 ```shell
-nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
+vim /opt/rt-n56u/trunk/configs/templates/MI-R4A.config
 ```
 
 * 开始编译
