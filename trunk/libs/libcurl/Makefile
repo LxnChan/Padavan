@@ -35,8 +35,8 @@ configure:
 		--disable-ldap \
 		--disable-ldaps \
 		--disable-rtsp \
-		--disable-telnet \
-		--disable-tftp \
+		--enable-telnet \
+		--enable-tftp \
 		--disable-smtp \
 		--disable-pop3 \
 		--disable-imap \
@@ -51,7 +51,8 @@ configure:
 		--disable-libcurl-option \
 		--disable-threaded-resolver \
 		--without-gnutls \
-		--without-ca-bundle \
+		--with-ssl \
+		--with-ca-bundle=/etc_ro/cacert.pem \
 		--without-libidn \
 		--without-libssh2 \
 		--without-krb4 \

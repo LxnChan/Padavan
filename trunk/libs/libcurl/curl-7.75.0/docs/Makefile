@@ -265,12 +265,12 @@ CC = /opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-ucl
 CCDEPMODE = depmode=gcc3
 CFLAGS = -Os -fomit-frame-pointer -pipe -DEMBED -isystem /opt/rt-n56u/trunk/stage/include -Dlinux -D__linux__ -Dunix -Wall -Wno-trigraphs -Wno-strict-aliasing -Wno-format-security -fno-tree-slsr -fno-aggressive-loop-optimizations -Wno-pointer-sign -Wno-unused -ffunction-sections -fdata-sections -Werror-implicit-function-declaration -Wno-system-headers
 CFLAG_CURL_SYMBOL_HIDING = -fvisibility=hidden
-CONFIGURE_OPTIONS = " '--prefix=/opt/rt-n56u/trunk/stage' '--enable-static' '--enable-shared' '--enable-ipv6' '--disable-gopher' '--disable-ldap' '--disable-ldaps' '--disable-rtsp' '--disable-telnet' '--disable-tftp' '--disable-smtp' '--disable-pop3' '--disable-imap' '--disable-sspi' '--disable-dict' '--disable-ares' '--disable-debug' '--disable-curldebug' '--disable-manual' '--disable-verbose' '--disable-tls-srp' '--disable-libcurl-option' '--disable-threaded-resolver' '--without-gnutls' '--without-ca-bundle' '--without-libidn' '--without-libssh2' '--without-krb4' '--without-nss' '--with-random=/dev/urandom' '--with-zlib=/opt/rt-n56u/trunk/stage' '--with-ssl=/opt/rt-n56u/trunk/stage' '--host=mipsel-linux' '--build=x86_64-pc-linux-gnu' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=mipsel-linux' 'CC=/opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-uclibc-gcc -mips32r2 -march=mips32r2 -mtune=1004kc' 'CFLAGS=-Os -fomit-frame-pointer -pipe  -DEMBED -I/opt/rt-n56u/trunk/stage/include -Dlinux -D__linux__ -Dunix -Wall -Wno-trigraphs -Wno-strict-aliasing -Wno-format-security -fno-tree-slsr -fno-aggressive-loop-optimizations -Wno-pointer-sign -Wno-unused -ffunction-sections -fdata-sections' 'LDFLAGS=-L/opt/rt-n56u/trunk/stage/lib -Wl,--gc-sections -Wl,-rpath-link=/opt/rt-n56u/trunk/stage/lib -Wl,-rpath-link=/opt/rt-n56u/trunk/stage/lib'"
+CONFIGURE_OPTIONS = " '--prefix=/opt/rt-n56u/trunk/stage' '--enable-static' '--enable-shared' '--enable-ipv6' '--disable-gopher' '--disable-ldap' '--disable-ldaps' '--disable-rtsp' '--enable-telnet' '--enable-tftp' '--disable-smtp' '--disable-pop3' '--disable-imap' '--disable-sspi' '--disable-dict' '--disable-ares' '--disable-debug' '--disable-curldebug' '--disable-manual' '--disable-verbose' '--disable-tls-srp' '--disable-libcurl-option' '--disable-threaded-resolver' '--without-gnutls' '--with-ssl' '--with-ca-bundle=/etc_ro/cacert.pem' '--without-libidn' '--without-libssh2' '--without-krb4' '--without-nss' '--with-random=/dev/urandom' '--with-zlib=/opt/rt-n56u/trunk/stage' '--with-ssl=/opt/rt-n56u/trunk/stage' '--host=mipsel-linux' '--build=x86_64-pc-linux-gnu' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=mipsel-linux' 'CC=/opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-uclibc-gcc -mips32r2 -march=mips32r2 -mtune=1004kc' 'CFLAGS=-Os -fomit-frame-pointer -pipe  -DEMBED -I/opt/rt-n56u/trunk/stage/include -Dlinux -D__linux__ -Dunix -Wall -Wno-trigraphs -Wno-strict-aliasing -Wno-format-security -fno-tree-slsr -fno-aggressive-loop-optimizations -Wno-pointer-sign -Wno-unused -ffunction-sections -fdata-sections' 'LDFLAGS=-L/opt/rt-n56u/trunk/stage/lib -Wl,--gc-sections -Wl,-rpath-link=/opt/rt-n56u/trunk/stage/lib -Wl,-rpath-link=/opt/rt-n56u/trunk/stage/lib'"
 CPP = /opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-uclibc-gcc -mips32r2 -march=mips32r2 -mtune=1004kc -E
 CPPFLAGS = -isystem /opt/rt-n56u/trunk/stage/include -isystem /opt/rt-n56u/trunk/stage/include
 CPPFLAG_CURL_STATICLIB = 
 CURLVERSION = 7.75.0
-CURL_CA_BUNDLE = 
+CURL_CA_BUNDLE = "/etc_ro/cacert.pem"
 CURL_CFLAG_EXTRAS = 
 CURL_DISABLE_DICT = 1
 CURL_DISABLE_FILE = 
@@ -286,8 +286,8 @@ CURL_DISABLE_PROXY =
 CURL_DISABLE_RTSP = 1
 CURL_DISABLE_SMB = 
 CURL_DISABLE_SMTP = 1
-CURL_DISABLE_TELNET = 1
-CURL_DISABLE_TFTP = 1
+CURL_DISABLE_TELNET = 
+CURL_DISABLE_TFTP = 
 CURL_LT_SHLIB_VERSIONED_FLAVOUR = 
 CURL_NETWORK_AND_TIME_LIBS = 
 CURL_NETWORK_LIBS = 
@@ -376,7 +376,7 @@ SSL_ENABLED = 1
 SSL_LIBS = -lssl -lcrypto
 STRIP = /opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-uclibc-strip
 SUPPORT_FEATURES = HTTPS-proxy IPv6 NTLM NTLM_WB SSL UnixSockets alt-svc libz
-SUPPORT_PROTOCOLS = FILE FTP FTPS HTTP HTTPS MQTT SMB SMBS
+SUPPORT_PROTOCOLS = FILE FTP FTPS HTTP HTTPS MQTT SMB SMBS TELNET TFTP
 USE_ARES = 
 USE_BEARSSL = 
 USE_GNUTLS = 

@@ -547,10 +547,10 @@ clean-sbinPROGRAMS:
 ../lib/$(am__dirstamp):
 	@$(MKDIR_P) ../lib/
 	@: > ../lib/$(am__dirstamp)
-../lib/strlcat.$(OBJEXT): ../lib/$(am__dirstamp)
-../lib/utimensat.$(OBJEXT): ../lib/$(am__dirstamp)
 ../lib/strlcpy.$(OBJEXT): ../lib/$(am__dirstamp)
+../lib/strlcat.$(OBJEXT): ../lib/$(am__dirstamp)
 ../lib/pidfile.$(OBJEXT): ../lib/$(am__dirstamp)
+../lib/utimensat.$(OBJEXT): ../lib/$(am__dirstamp)
 ../lib/strtonum.$(OBJEXT): ../lib/$(am__dirstamp)
 
 inadyn$(EXEEXT): $(inadyn_OBJECTS) $(inadyn_DEPENDENCIES) $(EXTRA_inadyn_DEPENDENCIES) 
