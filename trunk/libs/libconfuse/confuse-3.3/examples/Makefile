@@ -245,7 +245,7 @@ CC = /opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-ucl
 CCDEPMODE = depmode=gcc3
 CFLAGS = -Os -fomit-frame-pointer -pipe  -DEMBED -I/opt/rt-n56u/trunk/stage/include -Dlinux -D__linux__ -Dunix -Wall -Wno-trigraphs -Wno-strict-aliasing -Wno-format-security -fno-tree-slsr -fno-aggressive-loop-optimizations -Wno-pointer-sign -Wno-unused -ffunction-sections -fdata-sections
 CPP = /opt/rt-n56u/trunk/../toolchain-mipsel/toolchain-3.4.x/bin/mipsel-linux-uclibc-gcc -mips32r2 -march=mips32r2 -mtune=1004kc -E
-CPPFLAGS = -I/opt/rt-n56u/trunk/stage/include
+CPPFLAGS = 
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -274,14 +274,14 @@ LDFLAGS = -L/opt/rt-n56u/trunk/stage/lib -Wl,--gc-sections
 LEX = flex
 LEXLIB = 
 LEX_OUTPUT_ROOT = lex.yy
-LIBICONV = /opt/rt-n56u/trunk/stage/lib/libiconv.so -Wl,-rpath -Wl,/opt/rt-n56u/trunk/stage/lib
+LIBICONV = 
 LIBINTL = 
 LIBOBJS = 
 LIBS = $(LTLIBINTL)
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
-LTLIBICONV = -L/opt/rt-n56u/trunk/stage/lib -liconv -R/opt/rt-n56u/trunk/stage/lib
+LTLIBICONV = 
 LTLIBINTL = 
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
