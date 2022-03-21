@@ -1,36 +1,11 @@
+## Lxn-Padavan
 
-# README #
+想做最简洁、最轻快、最实用的Padavan固件。
 
-Welcome to the rt-n56u project
-
-This project aims to improve the rt-n56u and other supported devices on the software part, allowing power user to take full control over their hardware.
-This project was created in hope to be useful, but comes without warranty or support. Installing it will probably void your warranty. 
-Contributors of this project are not responsible for what happens next.
-
-### How do I get set up? ###
-
-* [Get the tools to build the system](https://bitbucket.org/padavan/rt-n56u/wiki/EN/HowToMakeFirmware) or [Download pre-built system image](https://bitbucket.org/padavan/rt-n56u/downloads)
-* Feed the device with the system image file (Follow instructions of updating your current system)
-* Perform factory reset
-* Open web browser on http://my.router to configure the services
-
-### Contribution guidelines ###
-
-* To be completed
-
-***
-
-### 特别说明 ###
-* 汉化字典来自：https://github.com/gorden5566/padavan
-* 更新日志：https://www.jianshu.com/p/d76a63a12eae
-* 基于hanwckf的Padavan仓库制作
-
-***
-
-### 固件特点 ###
+### Padavan
+- 基于hanwckf的Padavan仓库制作
 - 使用[gorden5566](https://github.com/gorden5566/padavan)的汉化字典
-- aria2前端更换为[AriaNg](https://github.com/mayswind/AriaNg)
-- [curl](https://github.com/curl/curl)可选编译可执行程序 ```CONFIG_FIRMWARE_INCLUDE_CURL```
+- [curl](https://github.com/curl/curl)可选编译可执行程序 ```CONFIG_FIRMWARE_INCLUDE_CURL``` **添加了SSL完整支持。**
 - 使用了[PROMETHEUS](http://pm.freize.net/index.html)提供的部分补丁
 - 使用了[Linaro1985/padavan-ng](https://gitlab.com/padavan-ng/padavan-ng)的部分软件包
 - 可选以下插件：
@@ -70,64 +45,27 @@ Contributors of this project are not responsible for what happens next.
 >- K2P
 >- K2P-USB (USB)
 
-*** 
+### 编译
 
-### 编译说明 ###
-
-* 安装依赖包
+- 安装依赖包
 
 ```shell
-# Debian/Ubuntu
+# Ubuntu 20.04 LTS
 sudo apt update
 sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
 	fakeroot kmod cpio git python3-docutils gettext automake autopoint \
 	texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
 	libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
-
-# Archlinux/Manjaro
-sudo pacman -Syu --needed git base-devel cmake gperf ncurses libmpc \
-        gmp python-docutils vim rpcsvc-proto fakeroot cpio help2man
-
-# Alpine
-sudo apk add make gcc g++ cpio curl wget nano xxd kmod \
-	pkgconfig rpcgen fakeroot ncurses bash patch \
-	bsd-compat-headers python2 python3 zlib-dev \
-	automake gettext gettext-dev autoconf bison \
-	flex coreutils cmake git libtool gawk sudo
-
-# CentOS 7
-sudo yum update
-sudo yum groupinstall "Development Tools"
-sudo yum install ncurses-* flex byacc bison zlib-* texinfo gmp-* mpfr-* gettext \
-	libtool* libmpc-* gettext-* python-docutils nano help2man fakeroot
-
-# CentOS 8
-sudo yum update
-sudo yum groupinstall "Development Tools"
-sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
-	libtool* libmpc-* gettext-* nano fakeroot
-
-# CentOS 8不能直接通过yum安装texinfo，help2man，python-docutils。请去官网下载发行的安装包编译安装
-# 以texinfo为例
-# cd /usr/local/src
-# sudo wget http://ftp.gnu.org/gnu/texinfo/texinfo-6.7.tar.gz
-# sudo tar zxvf texinfo-6.7.tar.gz
-# cd texinfo-6.7
-# sudo ./configure
-# sudo make
-# sudo make install
-
 ```
 
-* 克隆源码
+- 克隆源码
 
 ```shell
-git clone --depth=1 https://github.com/lxnchan/rt-n56u.git /opt/rt-n56u
 git clone --depth=1 git@github.com:LxnChan/Padavan.git /opt/rt-n56u
 git clone --depth=1 git@bitbucket.org:lxnchan/main.git /opt/rt-n56u
 ```
 
-* 准备工具链
+- 准备工具链
 
 ```shell
 cd /opt/rt-n56u/toolchain-mipsel
@@ -138,30 +76,25 @@ sh dl_toolchain.sh
 # 或者，也可以从源码编译工具链，这需要一些时间：
 ./clean_toolchain
 ./build_toolchain
-
 ```
 
-* (可选) 修改机型配置文件
+也可以在[这](https://github.com/LxnChan/Padavan/releases/tag/Toolchain) 下载，自己改一下dl_toolchain.sh脚本的下载地址就行。
+
+- 修改机型配置文件
 
 ```shell
 vim /opt/rt-n56u/trunk/configs/templates/MI-R4A.config
 ```
 
-* 开始编译
+- 开始编译
 
 ```shell
 cd /opt/rt-n56u/trunk
 # 对于WSL环境，建议使用sudo进行编译，或者使用fakeroot-tcp代替fakeroot
-fakeroot ./build_firmware_modify PSG1218
+fakeroot ./build_firmware_modify MI-R4A
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
 # 编译好的固件在trunk/images里
 # 首次编译完成后，如果需要再次编译其它固件，需要执行清理脚本：
 ./clear_tree
 ```
-
-***
-
-### 请参阅 ###
-- https://www.jianshu.com/p/cb51fb0fb2ac
-- https://www.jianshu.com/p/6b8403cdea46
 
