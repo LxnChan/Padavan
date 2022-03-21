@@ -1,3 +1,5 @@
+![Pic Of Lxn-Padavan](https://github.com/LxnChan/Padavan/blob/main/pic/pic220321a.png?raw=true)
+
 ## Lxn-Padavan
 
 想做最简洁、最轻快、最实用的Padavan固件。
