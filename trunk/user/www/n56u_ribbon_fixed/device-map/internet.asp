@@ -319,12 +319,12 @@ function submitInternet(v){
   </tr>
   <tr id="row_bytes" style="display:none">
     <th><#WAN_Bytes#></th>
-    <td width="90px"><span id="WANBytesRX"></span></td>
+    <td width="110px"><span id="WANBytesRX"></span></td>
     <td colspan="2"><span id="WANBytesTX"></span></td>
   </tr>
   <tr id="row_brate" style="display:none">
     <th><#WAN_BRate#></th>
-    <td width="90px"><span id="WANBRateRX"></span></td>
+    <td width="110px"><span id="WANBRateRX"></span></td>
     <td colspan="2"><span id="WANBRateTX"></span></td>
   </tr>
   <tr>
