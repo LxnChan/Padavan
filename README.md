@@ -2,7 +2,7 @@
 
 ## Lxn-Padavan
 
-就要做最简洁、最轻快、最实用的Padavan固件。
+我的想法是：做最简洁、最轻快、最实用的Padavan固件。
 
 ### Padavan
 - 基于hanwckf的Padavan仓库制作
